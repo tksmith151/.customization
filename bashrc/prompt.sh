@@ -12,7 +12,7 @@ BG_RED='\033[1;37;41m'
 BG_YELLOW='\033[1;37;43m'
 
 # State Variables
-FIRST_PROMPT=1
+#FIRST_PROMPT=1
 AT_PROMPT=1
 unset AT_PROMPT
 
@@ -28,10 +28,10 @@ BuildPromptCommand(){
     BuildSystemInformation
     BuildPrompt
 
-    if [ -n $FIRST_PROMPT ]; then
-        unset FIRST_PROMPT
-        return
-    fi
+    #if [ -n $FIRST_PROMPT ]; then
+    #    unset FIRST_PROMPT
+    #    return
+    #fi
 
     BuildFooter
 }
