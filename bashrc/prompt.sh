@@ -33,7 +33,7 @@ BuildPromptCommand(){
         return
     fi
 
-    BuildFooter $EXIT
+    BuildFooter
 }
 
 BuildHeader(){
@@ -59,7 +59,7 @@ BuildStart(){
 }
 
 BuildFooter(){
-    if [ $1 -nq 0 ]; then
+    if [ $EXIT != 0 ]; then
         printf "${BG_GREEN}                     ${RESET}\n\n\n\n"
     else
         printf "${BG_RED}                     ${RESET}\n\n\n\n"
