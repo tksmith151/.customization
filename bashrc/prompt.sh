@@ -52,5 +52,5 @@ BuildStart(){
     fi
     unset AT_PROMPT
 
-    printf "${BG_GRAY} \d \t ${RESET}\n"
+    printf "${BG_GRAY}                     ${RESET}\n"
 }
