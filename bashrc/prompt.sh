@@ -41,8 +41,8 @@ BuildSystemInformation(){
 }
 
 BuildPrompt(){
-    PS1+="${BG_YELLOW} > ${RESET}${BG_YELLOW} "
-    PS2="${BG_YELLOW} > ${RESET}${BG_YELLOW} "
+    PS1+="${BG_YELLOW} > ${RESET}${YELLOW} "
+    PS2="${BG_YELLOW} > ${RESET}${YELLOW} "
 }
 
 BuildStart(){
@@ -51,5 +51,5 @@ BuildStart(){
     fi
     unset AT_PROMPT
 
-    printf "Running Prompt"
+    printf "Running Prompt${RESET}"
 }
