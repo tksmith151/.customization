@@ -1,15 +1,17 @@
 # Color Pallete
-RESET='\[\033[0m\]'
+RESET_ESC='\[\033[0m\]'
 
 CYAN='\[\033[1;36m\]'
 YELLOW='\[\033[1;33m\]'
 
 BG_BLUE='\[\033[1;37;44m\]'
 BG_CYAN='\[\033[1;37;46m\]'
-BG_GRAY='\[\033[1;37;47m\]'
-BG_GREEN='\[\033[1;37;42m\]'
-BG_RED='\[\033[1;37;41m\]'
 BG_YELLOW='\[\033[1;37;43m\]'
+
+RESET='\033[0m'
+BG_GRAY='\033[1;37;47m'
+BG_GREEN='\033[1;37;42m'
+BG_RED='\033[1;37;41m'
 
 # State Variables
 #FIRST_PROMPT=1
@@ -37,16 +39,16 @@ BuildPromptCommand(){
 }
 
 BuildHeader(){
-    PS1+="${BG_BLUE} \d \t ${RESET}\n"
+    PS1+="${BG_BLUE} \d \t ${RESET_ESC}\n"
 }
 
 BuildSystemInformation(){
-    PS1+="${BG_CYAN} @ ${RESET}${CYAN} \u@\h:\w${RESET}\n"
+    PS1+="${BG_CYAN} @ ${RESET_ESC}${CYAN} \u@\h:\w${RESET_ESC}\n"
 }
 
 BuildPrompt(){
-    PS1+="${BG_YELLOW} > ${RESET}${YELLOW} "
-    PS2="${BG_YELLOW} > ${RESET}${YELLOW} "
+    PS1+="${BG_YELLOW} > ${RESET_ESC}${YELLOW} "
+    PS2="${BG_YELLOW} > ${RESET_ESC}${YELLOW} "
 }
 
 BuildStart(){
