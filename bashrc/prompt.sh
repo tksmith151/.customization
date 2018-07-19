@@ -20,6 +20,7 @@ trap BuildStart DEBUG
 PROMPT_COMMAND=BuildPromptCommand
 
 BuildPromptCommand(){
+    EXIT=$?
     AT_PROMPT=1
 
     PS1=''
@@ -31,6 +32,8 @@ BuildPromptCommand(){
         unset FIRST_PROMPT
         return
     fi
+
+    BuildFooter $EXIT
 }
 
 BuildHeader(){
@@ -53,4 +56,12 @@ BuildStart(){
     unset AT_PROMPT
 
     printf "${BG_GRAY}                     ${RESET}\n"
+}
+
+BuildFooter(){
+    if [ $1 -nq 0 ]; then
+        printf "${BG_GREEN}                     ${RESET}\n\n\n\n"
+    else
+        printf "${BG_RED}                     ${RESET}\n\n\n\n"
+    fi
 }
