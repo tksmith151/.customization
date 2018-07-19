@@ -64,4 +64,5 @@ BuildFooter(){
     else
         printf "${BG_RED}                     ${RESET}\n\n\n\n"
     fi
+    printf "\n\n\n\n"
 }
