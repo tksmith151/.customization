@@ -1,1 +1,1 @@
-# linux-personalization
+# .customization
