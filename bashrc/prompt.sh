@@ -1,15 +1,15 @@
 # Color Pallete
-RESET='\033[0m'
+RESET='\[\033[0m\]'
 
-CYAN='\033[1;36m'
-YELLOW='\033[1;33m'
+CYAN='\[\033[1;36m\]'
+YELLOW='\[\033[1;33m\]'
 
-BG_BLUE='\033[1;37;44m'
-BG_CYAN='\033[1;37;46m'
-BG_GRAY='\033[1;37;47m'
-BG_GREEN='\033[1;37;42m'
-BG_RED='\033[1;37;41m'
-BG_YELLOW='\033[1;37;43m'
+BG_BLUE='\[\033[1;37;44m\]'
+BG_CYAN='\[\033[1;37;46m\]'
+BG_GRAY='\[\033[1;37;47m\]'
+BG_GREEN='\[\033[1;37;42m\]'
+BG_RED='\[\033[1;37;41m\]'
+BG_YELLOW='\[\033[1;37;43m\]'
 
 # State Variables
 #FIRST_PROMPT=1
