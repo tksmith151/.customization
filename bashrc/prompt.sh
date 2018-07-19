@@ -14,7 +14,7 @@ BG_GREEN='\033[1;37;42m'
 BG_RED='\033[1;37;41m'
 
 # State Variables
-#FIRST_PROMPT=1
+FIRST_PROMPT=1
 AT_PROMPT=1
 unset AT_PROMPT
 
@@ -30,10 +30,10 @@ BuildPromptCommand(){
     BuildSystemInformation
     BuildPrompt
 
-    #if [ -n $FIRST_PROMPT ]; then
-    #    unset FIRST_PROMPT
-    #    return
-    #fi
+    if [ -n "$FIRST_PROMPT" ]; then
+        unset FIRST_PROMPT
+        return
+    fi
 
     BuildFooter
 }
@@ -52,7 +52,7 @@ BuildPrompt(){
 }
 
 BuildStart(){
-    if [ -z $AT_PROMPT ]; then
+    if [ -z "$AT_PROMPT" ]; then
         return
     fi
     unset AT_PROMPT
