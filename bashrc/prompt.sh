@@ -10,23 +10,46 @@ BG_GREEN='\033[1;37;42m'
 BG_RED='\033[1;37;41m'
 BG_YELLOW='\033[1;37;43m'
 
+# State Variables
+FIRST_PROMPT=1
+AT_PROMPT=1
+unset AT_PROMPT
+
+trap  DEBUG
 PROMPT_COMMAND=BuildPromptCommand
 
 BuildPromptCommand(){
+    AT_PROMPT=1
+
     PS1=''
     BuildHeader
     BuildSystemInformation
     BuildPrompt
+
+    if [ -n $FIRST_PROMPT ]; then
+        unset FIRST_PROMPT
+        return
+    fi
 }
 
 BuildHeader(){
-    PS1+=" \d \t \n"
+    PS1+="${BG_BLUE} \d \t ${RESET}\n"
 }
 
 BuildSystemInformation(){
-    PS1+=" \u@\h:\w\n"
+    PS1+="${BG_CYAN} @ ${RESET}${CYAN} \u@\h:\w${RESET}\n"
 }
 
 BuildPrompt(){
-    PS1+=" > "
+    PS1+="${BG_YELLOW} > ${RESET}${BG_YELLOW} "
+    PS2="${BG_YELLOW} > ${RESET}${BG_YELLOW} "
+}
+
+BuildStart(){
+    if [ -z $AT_PROMPT ]; then
+        return
+    fi
+    unset AT_PROMPT
+
+    printf "Running Prompt"
 }
