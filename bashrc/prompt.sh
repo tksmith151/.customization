@@ -15,7 +15,7 @@ FIRST_PROMPT=1
 AT_PROMPT=1
 unset AT_PROMPT
 
-trap  DEBUG
+trap BuildStart DEBUG
 PROMPT_COMMAND=BuildPromptCommand
 
 BuildPromptCommand(){
