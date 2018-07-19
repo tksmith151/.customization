@@ -60,9 +60,9 @@ BuildStart(){
 
 BuildFooter(){
     if [ $EXIT != 0 ]; then
-        printf "${BG_RED}                     "
+        printf "${BG_RED}                     ${RESET}"
     else
-        printf "${BG_GREEN}                     "
+        printf "${BG_GREEN}                     ${RESET}"
     fi
-    printf "${RESET}\n\n\n\n"
+    printf "\n\n\n\n"
 }
