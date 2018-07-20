@@ -50,18 +50,22 @@ BuildEnd(){
 }
 
 BuildTime(){
+    BuildStart
     PS1+="${BLUE}\d \t${RESET_ESC}"
 }
 
 BuildLocation(){
+    BuildConnection
     PS1+="${CYAN}\u@\h:\w${RESET_ESC}"
 }
 
 BuildSystemInformation(){
+    #BuildConnection
     PS1+=""
 }
 
 BuildPrompt(){
+    BuildEnd
     PS1+="${BLACK}->${RESET_ESC}${YELLOW} "
     PS2="${BLACK}|->${RESET_ESC}${YELLOW} "
 }
@@ -81,5 +85,5 @@ BuildExitStatus(){
     else
         printf "${GREEN} Success ${RESET}"
     fi
-    printf ""
+    printf "\n"
 }
