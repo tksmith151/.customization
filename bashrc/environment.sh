@@ -1,1 +1,1 @@
-export PROMPT_SIZE="mid"
+export PROMPT_SIZE="min"

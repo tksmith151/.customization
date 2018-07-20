@@ -26,7 +26,7 @@ BuildPromptCommand(){
     AT_PROMPT=1
 
     if [[ -z "${PROMPT_SIZE}" ]]; then
-        LOCAL_PROMPT_SIZE="mid"
+        LOCAL_PROMPT_SIZE="min"
     else
         LOCAL_PROMPT_SIZE="${PROMPT_SIZE}"
     fi
