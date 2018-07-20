@@ -49,7 +49,7 @@ BuildStart(){
 }
 
 BuildConnection(){
-    if [[ LOCAL_PROMPT_SIZE = "max" ]]; then
+    if [[ LOCAL_PROMPT_SIZE == "max" ]]; then
         PS1+="${BLACK_ESC} )\n|-( ${RESET_ESC}"
     else
         PS1+="${BLACK_ESC} )-( ${RESET_ESC}"
@@ -57,7 +57,7 @@ BuildConnection(){
 }
 
 BuildEnd(){
-    if [[ LOCAL_PROMPT_SIZE = "max" ]]; then
+    if [[ LOCAL_PROMPT_SIZE == "max" ]]; then
         PS1+="${BLACK_ESC} )\n|${RESET_ESC}"
     else
         PS1+="${BLACK_ESC} )${RESET_ESC}"
