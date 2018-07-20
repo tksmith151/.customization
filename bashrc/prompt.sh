@@ -29,6 +29,7 @@ BuildPromptCommand(){
     else
         LOCAL_PROMPT_SIZE="${PROMPT_SIZE}"
     fi
+    echo "${LOCAL_PROMPT_SIZE}"
 
     PS1=''
     BuildTime
@@ -49,7 +50,7 @@ BuildStart(){
 }
 
 BuildConnection(){
-    if [[ LOCAL_PROMPT_SIZE == "max" ]]; then
+    if [[ "${LOCAL_PROMPT_SIZE}" == "max" ]]; then
         PS1+="${BLACK_ESC} )\n|-( ${RESET_ESC}"
     else
         PS1+="${BLACK_ESC} )-( ${RESET_ESC}"
@@ -57,7 +58,7 @@ BuildConnection(){
 }
 
 BuildEnd(){
-    if [[ LOCAL_PROMPT_SIZE == "max" ]]; then
+    if [[ "${LOCAL_PROMPT_SIZE}" == "max" ]]; then
         PS1+="${BLACK_ESC} )\n|${RESET_ESC}"
     else
         PS1+="${BLACK_ESC} )${RESET_ESC}"
