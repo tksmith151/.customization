@@ -58,10 +58,10 @@ BuildConnection(){
 }
 
 BuildEnd(){
-    if [[ "${LOCAL_PROMPT_SIZE}" == "max" ]]; then
-        PS1+="${BLACK_ESC} )\n|${RESET_ESC}"
-    else
+    if [[ "${LOCAL_PROMPT_SIZE}" == "min" ]]; then
         PS1+="${BLACK_ESC} )${RESET_ESC}"
+    else
+        PS1+="${BLACK_ESC} )\n|${RESET_ESC}"
     fi
 }
 
