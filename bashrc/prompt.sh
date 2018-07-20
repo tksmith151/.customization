@@ -2,6 +2,7 @@
 BLACK_ESC='\[\033[1;30m\]'
 BLUE='\[\033[1;34m\]'
 CYAN='\[\033[1;36m\]'
+WHITE='[\033[1;37m\]'
 YELLOW='\[\033[1;33m\]'
 
 RESET_ESC='\[\033[0m\]'
@@ -29,7 +30,6 @@ BuildPromptCommand(){
     else
         LOCAL_PROMPT_SIZE="${PROMPT_SIZE}"
     fi
-    echo "${LOCAL_PROMPT_SIZE}"
 
     PS1=''
     BuildTime
@@ -67,17 +67,27 @@ BuildEnd(){
 
 BuildTime(){
     BuildStart
-    PS1+="${BLUE}\d \t${RESET_ESC}"
+    if [[ "${LOCAL_PROMPT_SIZE}" == "min" ]]; then
+        PS1+="${BLUE}\A${RESET_ESC}"
+    else
+        PS1+="${BLUE}\d \t${RESET_ESC}"
+    fi
 }
 
 BuildLocation(){
     BuildConnection
-    PS1+="${CYAN}\u@\h:\w${RESET_ESC}"
+    if [[ "${LOCAL_PROMPT_SIZE}" == "min" ]]; then
+        PS1+="${CYAN}\u@\h:\W${RESET_ESC}"
+    else
+        PS1+="${CYAN}\u@\h:\w${RESET_ESC}"
+    fi
 }
 
 BuildSystemInformation(){
-    #BuildConnection
-    PS1+=""
+    if [[ "${LOCAL_PROMPT_SIZE}" != "min" ]]; then
+        BuildConnection
+        PS1+="${WHITE}SYS${RESET_ESC}"
+    fi
 }
 
 BuildPrompt(){
