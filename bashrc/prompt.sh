@@ -21,8 +21,14 @@ trap BuildOutput DEBUG
 PROMPT_COMMAND=BuildPromptCommand
 
 BuildPromptCommand(){
-    EXIT=$?
+    EXIT="${?}"
     AT_PROMPT=1
+
+    if [[ -z "${PROMPT_SIZE}" ]]; then
+        LOCAL_PROMPT_SIZE="mid"
+    else
+        LOCAL_PROMPT_SIZE="${PROMPT_SIZE}"
+    fi
 
     PS1=''
     BuildTime
@@ -30,7 +36,7 @@ BuildPromptCommand(){
     BuildSystemInformation
     BuildPrompt
 
-    if [ -n "$FIRST_PROMPT" ]; then
+    if [[ -n "$FIRST_PROMPT" ]]; then
         unset FIRST_PROMPT
         return
     fi
@@ -43,11 +49,19 @@ BuildStart(){
 }
 
 BuildConnection(){
-    PS1+="${BLACK_ESC} )-( ${RESET_ESC}"
+    if [[ LOCAL_PROMPT_SIZE = "max" ]]; then
+        PS1+="${BLACK_ESC} )\n|-( ${RESET_ESC}"
+    else
+        PS1+="${BLACK_ESC} )-( ${RESET_ESC}"
+    fi
 }
 
 BuildEnd(){
-    PS1+="${BLACK_ESC} )${RESET_ESC}"
+    if [[ LOCAL_PROMPT_SIZE = "max" ]]; then
+        PS1+="${BLACK_ESC} )\n|${RESET_ESC}"
+    else
+        PS1+="${BLACK_ESC} )${RESET_ESC}"
+    fi
 }
 
 BuildTime(){
@@ -72,7 +86,7 @@ BuildPrompt(){
 }
 
 BuildOutput(){
-    if [ -z "$AT_PROMPT" ]; then
+    if [[ -z "$AT_PROMPT" ]]; then
         return
     fi
     unset AT_PROMPT
@@ -82,7 +96,7 @@ BuildOutput(){
 
 BuildExitStatus(){
     printf "${BLACK}|== ${RESET}"
-    if [ $EXIT != 0 ]; then
+    if [[ "${EXIT}" != 0 ]]; then
         printf "${RED}Error ${EXIT}${RESET}"
     else
         printf "${GREEN}Success${RESET}"
