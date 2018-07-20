@@ -106,16 +106,15 @@ BuildOutput(){
 }
 
 BuildExitStatus(){
-    printf "${BLACK}|== ${RESET}"
     if [[ "${EXIT}" != 0 ]]; then
-        printf "${RED}Error ${EXIT}${RESET}\n"
+        printf "${BLACK}|== ${RESET}${RED}Error ${EXIT}${RESET}\n"
     else
         if [[ "${LOCAL_PROMPT_SIZE}" != "min" ]]; then
-            printf "${GREEN}Success${RESET}\n"
+            printf "${BLACK}|== ${RESET}${GREEN}Success${RESET}\n"
         fi
     fi
     
     if [[ "${LOCAL_PROMPT_SIZE}" != "min" ]]; then
-        printf "|\n|\n"
+        printf "${BLACK}|\n|\n${RESET}"
     fi
 }
