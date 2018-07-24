@@ -86,7 +86,10 @@ BuildLocation(){
 BuildSystemInformation(){
     if [[ "${LOCAL_PROMPT_SIZE}" != "min" ]]; then
         BuildConnection
-        PS1+="${WHITE}SYS${RESET_ESC}"
+        CPU="$(top bn1 | grep load | awk '{printf "%.2f%%", $(NF-2)}')"
+        MEMORY="$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2'})"
+        DISK="$(df -h | awk 'NF=="/"{printf "%s", $5}')"
+        PS1+="${WHITE}C: ${CPU}, M: , D:${RESET_ESC}"
     fi
 }
 
