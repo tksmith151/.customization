@@ -24,6 +24,10 @@ BuildPromptCommand(){
     EXIT="${?}"
     AT_PROMPT=1
 
+    history -a
+    history -c
+    history -r
+
     if [[ -z "${PROMPT_SIZE}" ]]; then
         LOCAL_PROMPT_SIZE="min"
     else
