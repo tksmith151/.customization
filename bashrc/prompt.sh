@@ -18,7 +18,6 @@ FIRST_PROMPT=1
 AT_PROMPT=1
 unset AT_PROMPT
 
-trap BuildOutput DEBUG
 PROMPT_COMMAND=BuildPromptCommand
 
 BuildPromptCommand(){
@@ -117,3 +116,5 @@ BuildExitStatus(){
         fi
     fi
 }
+
+trap BuildOutput DEBUG
