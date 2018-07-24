@@ -1,5 +1,8 @@
 alias grep="grep --color=auto"
+alias hs="history | grep"
+alias l.="ls -Fh -d .* --color=auto"
 alias la="ls -Fahl --color=auto"
+alias lh="ls -Fhl -d .* --color=auto"
 alias ll="ls -Fhl --color=auto"
 alias ls="ls -F --color=auto"
 alias maxprompt="export PROMPT_SIZE=\"max\""
