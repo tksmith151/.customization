@@ -7,9 +7,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Load Modules
-for module in bashrc.d/*.sh
-do
-    if [ -x "${script}" ]; then
-        source ${script}
-    fi
-done
+source bashrc.d/environment
+source bashrc.d/options
+source bashrc.d/aliases
+source bashrc.d/prompt
