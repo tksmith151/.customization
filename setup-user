@@ -1,5 +1,6 @@
 # Declare all dotfiles
-declare -a dotfiles=("vimrc")
+declare -a dotfiles=("bashrc"
+                     "vimrc")
 
 # Remove Old Files and Symlinks
 for dotfile in "${dotfiles[@]}"
