@@ -2,7 +2,7 @@
 [ -z "$PS1" ] && return
 
 # Source global definitions
-if [ -f /etc/bashrc ]; then
+if [ -e /etc/bashrc ]; then
     source /etc/bashrc
 fi
 
@@ -10,4 +10,5 @@ fi
 source ~/.dotfiles/bashrc.d/environment
 source ~/.dotfiles/bashrc.d/options
 source ~/.dotfiles/bashrc.d/aliases
+source ~/.dotfiles/bashrc.d/functions
 source ~/.dotfiles/bashrc.d/prompt

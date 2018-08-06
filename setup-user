@@ -2,10 +2,8 @@
 declare -a dotfiles=("bashrc"
                      "vimrc")
 
-# Remove Old Files and Symlinks
+# Overwrite existing files and symlinks with new Symlinks
 for dotfile in "${dotfiles[@]}"
 do
     ln -sf ~/.dotfiles/"$dotfile" ~/."$dotfile"
 done
-
-# Create New Symlinks
