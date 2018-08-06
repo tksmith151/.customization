@@ -5,7 +5,7 @@ declare -a dotfiles=("vimrc")
 for dotfile in "${dotfiles[@]}"
 do
     echo "$dotfile"
-    ln -sf ~/.dotfile/"$dotfile" ~/"$dotfile"
+    ln -sf ~/.dotfiles/"$dotfile" ~/."$dotfile"
 done
 
 # Create New Symlinks
