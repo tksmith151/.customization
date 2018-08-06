@@ -7,7 +7,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Load Modules
-source ~/.customization/bashrc.d/environment
-source ~/.customization/bashrc.d/options
-source ~/.customization/bashrc.d/aliases
-source ~/.customization/bashrc.d/prompt
+source ~/.dotfiles/bashrc.d/environment
+source ~/.dotfiles/bashrc.d/options
+source ~/.dotfiles/bashrc.d/aliases
+source ~/.dotfiles/bashrc.d/prompt
