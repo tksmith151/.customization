@@ -1,5 +1,6 @@
 # Declare all dotfiles
 declare -a dotfiles=("bashrc"
+                     "bash_profile"
                      "vimrc")
 
 # Overwrite existing files and symlinks with new Symlinks
