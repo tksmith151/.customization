@@ -5,7 +5,6 @@ declare -a dotfiles=("bashrc"
 # Remove Old Files and Symlinks
 for dotfile in "${dotfiles[@]}"
 do
-    echo "$dotfile"
     ln -sf ~/.dotfiles/"$dotfile" ~/."$dotfile"
 done
 
